@@ -2,10 +2,38 @@ body {
   text-align: center;
 }
 
-header img {
+#logo {
   width: 25em;
+  cursor: pointer;
 }
 
 blockquote {
   font-style: italic;
+}
+
+:root {
+  --shake-rotate: 5deg;
+  --shake-scale: 1.1;
+}
+
+@keyframes shake {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  25% {
+    transform: rotate(var(--shake-rotate)) scale(var(--shake-scale));
+  }
+  50% {
+    transform: rotate(calc(var(--shake-rotate) * -1)) scale(var(--shake-scale));
+  }
+  75% {
+    transform: rotate(var(--shake-rotate)) scale(var(--shake-scale));
+  }
+  100% {
+    transform: rotate(0deg) scale(1);
+  }
+}
+
+.shake {
+  animation: shake 0.5s;
 }
