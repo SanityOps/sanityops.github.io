@@ -4,7 +4,8 @@ window.intercomSettings = {
 };
 
 const logo = document.getElementById("logo");
-logo.addEventListener("click", () => {
+
+const shakeLogo = () => {
   logo.classList.add("shake");
   logo.addEventListener(
     "animationend",
@@ -13,4 +14,8 @@ logo.addEventListener("click", () => {
     },
     { once: true },
   );
-});
+};
+
+window.addEventListener("DOMContentLoaded", shakeLogo);
+
+logo.addEventListener("click", shakeLogo);
